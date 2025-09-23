@@ -26,6 +26,7 @@
     <a href="services.html">Services</a>
     
     <a href="contact.html">Contact</a>
+    <a href="#faqs">FAQ's</a>
   </nav>
 </header>
 
@@ -195,6 +196,105 @@
   <!-- Message area -->
   <div id="form-message" style="margin-top:15px; font-weight:bold;"></div>
 </section>
+<!-- FAQs Section -->
+<section id="faqs">
+  <div class="faqs-container">
+    <h2>Frequently Asked Questions (FAQs)</h2>
+    <div class="faqs-box">
+      <div class="faq-item">
+        <button class="faq-question">1. What types of diesel fuel do you supply?</button>
+        <div class="faq-answer">
+          We offer a range of diesel fuels, including standard diesel (D2), ultra-low sulfur diesel (ULSD), and biodiesel blends, catering to various industrial and commercial needs.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">2. How can I place an order for diesel delivery?</button>
+        <div class="faq-answer">
+          Orders can be placed through our website, via email at orders@greenlinepetroleum.com, or by calling our customer service at +971 50 582 1442.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">3. Do you provide fuel supply for construction sites?</button>
+        <div class="faq-answer">
+          Yes, we specialize in providing bulk fuel deliveries to construction sites, ensuring your equipment operates without interruption.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">4. What is the minimum order quantity for diesel delivery?</button>
+        <div class="faq-answer">
+          The minimum order quantity varies based on location and delivery logistics. Please contact us directly to discuss your specific requirements.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">5. Are your fuel products compliant with UAE regulations?</button>
+        <div class="faq-answer">
+          Absolutely. All our fuel products meet the stringent standards set by UAE regulatory authorities, ensuring safety and environmental compliance.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">6. Can you supply fuel for marine vessels?</button>
+        <div class="faq-answer">
+          Yes, we provide marine-grade diesel fuel for vessels operating in UAE waters, adhering to maritime fuel standards.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">7. What are your payment terms for bulk fuel orders?</button>
+        <div class="faq-answer">
+          We offer flexible payment terms, including credit accounts for regular customers and upfront payments for one-time orders.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">8. Do you offer emergency fuel delivery services?</button>
+        <div class="faq-answer">
+          Yes, we provide emergency fuel delivery services to ensure your operations continue smoothly during unforeseen circumstances.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">9. How do I schedule a fuel delivery?</button>
+        <div class="faq-answer">
+          Deliveries can be scheduled through our online portal, by contacting our customer service, or via email. We recommend scheduling at least 24 hours in advance.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">10. What is the shelf life of diesel fuel?</button>
+        <div class="faq-answer">
+          Properly stored diesel fuel has a shelf life of 6 to 12 months. We recommend using fuel within this period to ensure optimal performance.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">11. Do you offer fuel additives?</button>
+        <div class="faq-answer">
+          Yes, we provide fuel additives that enhance engine performance, prevent corrosion, and improve fuel efficiency.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">12. Can you deliver fuel outside Dubai?</button>
+        <div class="faq-answer">
+          Yes, we provide fuel deliveries across UAE. Please contact us to confirm availability in your area.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">13. Are your fuel trucks certified for safety?</button>
+        <div class="faq-answer">
+          Yes, all our fuel trucks are fully certified and comply with UAE safety regulations.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">14. Do you offer regular fuel contracts?</button>
+        <div class="faq-answer">
+          Yes, we offer long-term contracts for regular fuel supply to businesses and industrial clients.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">15. How can I contact customer support?</button>
+        <div class="faq-answer">
+          You can reach our customer support via phone at +971 50 582 1442, email at support@greenlinepetroleum.com, or through our website contact form.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- FOOTER -->
 <footer>
@@ -409,5 +509,24 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollLogos(); // start auto-scroll
 });
 </script>
+<script>
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const maxHeight = answer.style.maxHeight;
+
+      // Close all open answers
+      document.querySelectorAll('.faq-answer').forEach(ans => {
+        ans.style.maxHeight = null;
+      });
+
+      if (!maxHeight) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+
 
 </body>

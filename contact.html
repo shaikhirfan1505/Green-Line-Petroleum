@@ -166,20 +166,120 @@
 }
 
 
-    /* Footer */
-    footer { background:#0B6623; color:#fff; padding:40px 20px 20px 20px; }
-    .footer-container { display:flex; justify-content:space-between; flex-wrap:wrap; max-width:1200px; margin:auto; gap:40px; }
-    .footer-left, .footer-right { flex:1; min-width:250px; }
-    .footer-logo { max-width:250px; margin-bottom:20px; border-radius:25px; }
-    .footer-icons { display:flex; gap:15px; margin-top:10px; }
-    .footer-icons a { display:flex; align-items:center; justify-content:center; width:45px; height:45px; background:#fff; border-radius:50%; color:#0B6623; font-size:1.2rem; transition:0.3s; }
-    .footer-icons a:hover { background:#0B6623; color:#fff; }
-    .footer-right h3 { font-size:1.4em; margin-bottom:15px; }
-    .footer-right ul { list-style:none; padding:0; }
-    .footer-right ul li { margin-bottom:10px; }
-    .footer-right ul li a { color:#fff; transition:0.3s; }
-    .footer-right ul li a:hover { color:#1abc9c; }
-    .footer-bottom { text-align:center; margin-top:30px; font-size:0.9em; color:#bdc3c7; }
+    footer {
+  background: #0B6623;
+  color: #fff;
+  padding: 40px 20px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Left Section */
+.footer-logo {
+  max-width: 250px;
+  margin-bottom: 20px;
+  border-radius: 25px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: #fff;
+  border-radius: 50%;
+  color: #0B6623;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.footer-icons a:hover {
+  background: #0B6623;
+  color: #fff;
+}
+
+/* Right Section */
+.footer-right h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* Columns for quick links */
+.footer-links-columns {
+  display: flex;
+  gap: 60px; /* Increased gap between columns */
+  flex-wrap: wrap;
+}
+
+.footer-links-columns ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links-columns ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links-columns ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links-columns ul li a:hover {
+  color: #1abc9c;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #ffffff; /* Solid black instead of grey */
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-links-columns {
+    gap: 40px; /* Slightly smaller gap on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-links-columns {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
 
     /* Responsive */
     @media (max-width:768px) {
@@ -296,32 +396,54 @@
 </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-left">
-        <img src="logo.png" alt="GreenLine Petroleum" class="footer-logo">
-        <div class="footer-icons">
-          <a href="tel:+971505821442"><i class="fas fa-phone"></i></a>
-          <a href="mailto:ceo@greenlinepetroleumproducts.com"><i class="fas fa-envelope"></i></a>
-          <a href="https://wa.me/971505821442" target="_blank"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://linkedin.com/company/yourcompany" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://maps.app.goo.gl/3H9Q917gri859brk7" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
-        </div>
+<footer>
+  <div class="footer-container">
+    <!-- Left Section -->
+    <div class="footer-left">
+      <img src="logo.png" alt="GreenLine Petroleum" class="footer-logo">
+      <div class="footer-icons">
+        <a href="tel:+971505821442"><i class="fas fa-phone"></i></a>
+        <a href="mailto:ceo@greenlinepetroleumproducts.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/971505821442" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://linkedin.com/company/yourcompany" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://maps.app.goo.gl/3H9Q917gri859brk7" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
       </div>
-      <div class="footer-right">
-        <h3>Quick Links</h3>
+    </div>
+
+    <!-- Right Section -->
+    <div class="footer-right">
+      <h3>Quick Links</h3>
+      <div class="footer-links-columns">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+        <ul>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+        </ul>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> GreenLine Petroleum. All rights reserved.</p>
-    </div>
-  </footer>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> GreenLine Petroleum. All rights reserved.</p>
+  </div>
+</footer>
 
   <!-- JS -->
   <script>
