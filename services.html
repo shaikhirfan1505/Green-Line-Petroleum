@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | GreenLine Petroleum</title>
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+header {
+  background: #ffffff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+header .logo {
+  color: #0f5132;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  color: #0f5132;
+  text-decoration: none;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  color: #095018;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #0f5132;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  padding: 10px 20px;
+  color: #0f5132;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.mobile-menu a:hover {
+  background: #f1f1f1;
+}
+
+/* Services Section */
+#services {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+#services h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #0f5132;
+}
+
+#services .intro {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+  font-size: 1.1em;
+  color: #000000;
+}
+
+.service-block {
+  margin-bottom: 60px;
+}
+
+.service-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-box h3 {
+  text-align: center;
+  font-size: 2em;
+  color: #0f5132;
+  margin-bottom: 20px;
+}
+
+.service-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  position: relative;
+}
+
+.service-box.reverse .service-inner {
+  flex-direction: row-reverse;
+}
+
+.service-img {
+  flex: 1;
+  max-width: 500px;
+}
+
+.service-img img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.service-text p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  line-height: 1.7;
+  color: #000000;
+}
+
+.service-text {
+  flex: 2;
+  text-align: left;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.btn-quote {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #0f5132;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.btn-right {
+  bottom: 15px;
+  right: 0;
+}
+
+.btn-left {
+  bottom: 15px;
+  left: 0;
+}
+
+/* Footer */
+footer {
+  background: #0B6623; /* dark green */
+  color: #ffffff;
+  padding: 40px 20px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.footer-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-left img {
+  width: 250px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: #ffffff;
+  border-radius: 50%;
+  color: #0B6623;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-icons a:hover {
+  background: #0B6623;
+  color: #ffffff;
+}
+
+.footer-icons a img {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-right h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-right ul li {
+  margin-bottom: 10px;
+}
+
+.footer-right ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-right ul li a:hover {
+  color: #1abc9c;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #bdc3c7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    min-width: 100%;
+    align-items: center;
+  }
+
+  .footer-icons a {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .service-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-text {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .btn-quote {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    left: auto;
+    margin-top: 15px;
+  }
+
+  .service-box.reverse .service-inner {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <a href="index.html" class="logo">GreenLine Petroleum</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <p class="intro">
+      At GreenLine Petroleum, we are committed to delivering reliable and efficient 
+      petroleum solutions across the UAE. From diesel supply to fuel contracts and 
+      petroleum trading, our services ensure your business operations never stop.<br>
+      We prioritize safety, quality, and timely delivery for all our clients, ensuring 
+      your energy needs are met seamlessly. Our dedicated team is always ready to provide 
+      professional advice and support tailored to your business requirements.
+    </p>
+
+    <!-- Service 1 -->
+    <div class="service-block">
+      <div class="service-box">
+        <h3>Diesel Supply</h3>
+        <div class="service-inner">
+          <div class="service-img">
+            <img src="diesel tank.png" alt="Diesel Supply">
+          </div>
+          <div class="service-text">
+            <p> We provide high-grade diesel fuel for transportation, construction, manufacturing, and other industries. With our strong distribution network and fleet, we guarantee prompt delivery and uninterrupted supply.
+                <br> Our quality standards ensure efficiency and safety in every delivery. Our team also offers expert guidance on fuel storage and handling. </p>
+             <p> Each delivery is tracked to ensure punctuality and operational continuity. Flexible scheduling ensures minimal disruption to your operations.
+                <br> Safety protocols are strictly followed during each transaction. Customized fuel solutions are available to meet specific business requirements. </p>
+            <a href="#quote" class="btn-quote btn-right">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-block">
+      <div class="service-box reverse">
+        <h3>Fuel Supply Contracts</h3>
+        <div class="service-inner">
+          <div class="service-img">
+            <img src="fuel dealing.png" alt="Fuel Supply Contracts">
+          </div>
+          <div class="service-text">
+            <p> We offer long-term fuel supply contracts tailored to the needs of businesses and industries. Our contracts ensure a consistent supply of fuel at competitive rates, allowing clients to focus on operations. 
+                <br> Flexible options are available for every business size. Our contracts include detailed reporting, delivery scheduling, and emergency support. </p>
+             <p> We work closely with clients to adapt to their changing fuel requirements. Partnering with us means reliable fuel supply and uninterrupted business continuity. Our team ensures transparency, timely updates, and client satisfaction at every step. </p>
+            <a href="#quote" class="btn-quote btn-left">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-block">
+      <div class="service-box">
+        <h3>Petroleum Trading</h3>
+        <div class="service-inner">
+          <div class="service-img">
+            <img src="industrial image.png" alt="Petroleum Trading">
+          </div>
+          <div class="service-text">
+            <p> GreenLine Petroleum specializes in bulk petroleum trading, providing businesses with seamless access to high-quality fuel products. Our extensive supplier network and logistics expertise ensure smooth operations.
+                <br> Timely deliveries for wholesale customers with strict quality checks and transparent pricing. Clients benefit from flexible trade terms. </p> 
+            <p> We assist with market analysis, inventory management, and strategic procurement. Partnering with GreenLine ensures consistent, cost-effective, and dependable petroleum solutions. Customer support is available to address any queries or operational concerns promptly. </p>
+            <a href="#quote" class="btn-quote btn-right">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="logo.png" alt="GreenLine Petroleum Logo" class="footer-logo">
+        <div class="footer-icons">
+          <a href="tel:+971505821442"><i class="fas fa-phone"></i></a>
+          <a href="mailto:ceo@greenlinepetroleumproducts.com"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/971505821442" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://linkedin.com/company/yourcompany" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://maps.app.goo.gl/3H9Q917gri859brk7" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> GreenLine Petroleum. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('open');
+    });
+
+    window.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

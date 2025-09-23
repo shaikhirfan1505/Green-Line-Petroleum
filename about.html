@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | GreenLine Petroleum</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #000; /* Solid black instead of grey */
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    header {
+      background: #ffffff;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: #0f5132;
+      font-size: 1.4em;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #0f5132;
+      text-decoration: none;
+      font-size: 1em;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #095018;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #0f5132;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      padding: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      padding: 10px 20px;
+      color: #0f5132;
+      text-decoration: none;
+    }
+
+    .mobile-menu a:hover {
+      background: #f1f1f1;
+    }
+
+    /* About Hero */
+    #about-hero {
+      background: url('images/petroleum-bg.jpg') center/cover no-repeat;
+      padding: 100px 20px;
+      color: #0f5132;
+      text-align: center;
+    }
+    #about-hero h1 {
+      font-size: 3em;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    #about-hero p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+ 
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+    }
+    section h2 {
+      color: #0f5132;
+      margin-bottom: 20px;
+      font-size: 2em;
+      text-align: center;
+    }
+    .content {
+      max-width: 1100px;
+      margin: auto;
+      line-height: 1.7;
+      color: #000; /* solid black text */
+    }
+
+    /* General Box Style */
+    .text-box {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+
+    /* Values Section */
+    .values-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+    .value {
+      flex: 1 1 250px;
+      margin: 15px;
+      text-align: center;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .value h3 {
+      color: #0f5132;
+      margin: 15px 0 10px;
+    }
+
+    /* Timeline */
+    .timeline {
+      list-style: none;
+      padding: 20px;
+      border-left: 3px solid #0f5132;
+      margin: 30px auto;
+      max-width: 700px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .timeline li {
+      margin: 20px 0;
+      padding-left: 20px;
+      position: relative;
+      color: #000; /* solid black */
+    }
+    .timeline li::before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      background: #0f5132;
+      border-radius: 50%;
+      position: absolute;
+      left: -9px;
+      top: 5px;
+    }
+
+    /* CEO Message */
+    .ceo-section {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 40px auto;
+      flex-wrap: wrap;
+    }
+    .ceo-photo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;  /* stack children vertically */
+  align-items: center;     /* center image + text */
+}
+
+.ceo-photo img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #0f5132;
+}
+
+.ceo-name {
+  margin-top: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #0f5132;
+  text-align: center;
+}
+
+    .ceo-message {
+      flex: 2;
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .ceo-message p {
+      margin-bottom: 15px;
+      font-size: 1.05em;
+      line-height: 1.7;
+      color: #000;
+    }
+
+    /* Award Section */
+    .award-section {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .award-box {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: auto;
+    }
+    .award-section img {
+      width: 500px;
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .award-section p {
+      font-size: 1.1em;
+      color: #000;
+      line-height: 1.8;
+    }
+
+    /* Commitment */
+    #commitment {
+      background: #0f5132;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    #commitment p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.2em;
+    }
+
+    /* Footer */
+    footer {
+      background: #0B6623;
+      color: #fff;
+      padding: 40px 20px 20px 20px;
+    }
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+    .footer-left,
+    .footer-right {
+      flex: 1;
+      min-width: 250px;
+    }
+    .footer-logo {
+      max-width: 250px;
+      margin-bottom: 20px;
+      border-radius: 25px;
+    }
+    .footer-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .footer-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: #fff;
+      border-radius: 50%;
+      color: #0B6623;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+    .footer-icons a:hover {
+      background: #0B6623;
+      color: #fff;
+    }
+    .footer-right h3 {
+      font-size: 1.4em;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+    .footer-right ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-right ul li {
+      margin-bottom: 10px;
+    }
+    .footer-right ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .footer-right ul li a:hover {
+      color: #1abc9c;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #000; /* Solid black instead of grey */
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hamburger { display: block; }
+      .ceo-section { flex-direction: column; text-align: center; }
+      .ceo-message { margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <a href="index.html" class="logo">GreenLine Petroleum</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <!-- About Hero -->
+  <section id="about-hero">
+  <h1>About GreenLine Petroleum</h1>
+  <p>Powering UAE with reliable and sustainable fuel solutions.</p>
+  <p>With decades of industry expertise, GreenLine Petroleum is dedicated to delivering premium petroleum products and services that meet the highest standards.</p>
+  <p>Our mission is to support growth, innovation, and sustainability while building long-term partnerships with businesses and communities across the UAE.</p>
+</section>
+
+
+  <!-- CEO Section -->
+  <section>
+    <div class="ceo-section">
+      <div class="ceo-photo">
+        <img src="sample ceo.png" alt="CEO GreenLine Petroleum">
+        <p class="ceo-name">Sheikh Mohammed, CEO</p>
+      </div>
+      <div class="ceo-message">
+        <p>
+          At GreenLine Petroleum, our journey has been guided by a relentless pursuit of quality, 
+          innovation, and service excellence. Each milestone we have achieved reflects the dedication 
+          of our team and the trust of our clients.
+        </p>
+        <p>
+          Our vision is to build a sustainable future where energy drives growth without compromising 
+          the environment. By adopting best practices and maintaining transparency, we aim to set 
+          benchmarks in the petroleum industry.
+        </p>
+        <p>
+          I thank our valued customers, partners, and employees for their continued support. Together, 
+          we will fuel progress, strengthen communities, and lead the way towards a greener tomorrow.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Intro -->
+  <section>
+    <h2>Who We Are</h2>
+    <div class="content text-box">
+      
+      <p>
+        GreenLine Petroleum is a trusted fuel supplier in the UAE, providing high-quality petroleum 
+        products to industries, businesses, and communities. With years of experience in the 
+        petroleum sector, we pride ourselves on delivering reliable energy solutions that keep 
+        businesses running and economies moving.
+      </p>
+      <p>
+        Our dedicated team ensures timely delivery, strict quality checks, and customer-first service. 
+        From transportation fleets to industrial clients, we serve a wide range of businesses with 
+        complete fuel management solutions. We combine global expertise with local understanding 
+        to meet the evolving energy demands of the UAE.
+      </p>
+    </div>
+  </section>
+
+  <!-- Award Section -->
+  <section class="award-section">
+     <img src="https://www.oilandgasmiddleeast.com/cloud/2021/08/04/ADNOC-employees.jpg" alt="GreenLine Petroleum Award">
+    <div class="award-box">
+     
+      <p>
+        GreenLine Petroleum is proud to have been recognized by the Government of Sharjah 
+        for its excellence in energy supply and sustainable business practices. This prestigious 
+        award is a testament to our commitment to innovation, safety, and customer satisfaction. 
+        It motivates us to continue driving progress in the petroleum industry of the UAE.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section>
+    <h2>Our Mission & Vision</h2>
+    <div class="content text-box">
+      
+      <p><strong>Mission:</strong> To deliver efficient and sustainable petroleum products with a 
+      strong focus on safety, quality, and customer satisfaction. We aim to empower industries 
+      and communities by providing uninterrupted fuel solutions.</p>
+      <p><strong>Vision:</strong> To be the leading petroleum provider in the UAE, setting standards 
+      in energy excellence and environmental responsibility while contributing to the growth 
+      and prosperity of the nation.</p>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section>
+    <div class="content">
+      <h2>Our Core Values</h2>
+      <div class="values-grid">
+        <div class="value">
+          <h3>Safety First</h3>
+          <p>We ensure safe operations, from storage to delivery, prioritizing people and environment.</p>
+        </div>
+        <div class="value">
+          <h3>Integrity</h3>
+          <p>Honesty and transparency drive every part of our business practices.</p>
+        </div>
+        <div class="value">
+          <h3>Sustainability</h3>
+          <p>We embrace eco-friendly solutions to reduce environmental impact.</p>
+        </div>
+        <div class="value">
+          <h3>Customer Focus</h3>
+          <p>Our clients’ trust and satisfaction are at the heart of everything we do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History -->
+  <section>
+    <div class="content">
+      <h2>Our Journey</h2>
+      <ul class="timeline">
+        <li><strong>20XX:</strong> GreenLine Petroleum founded in Sharjah, UAE.</li>
+        <li><strong>20XX:</strong> Expanded fuel distribution network across the Emirates.</li>
+        <li><strong>20XX:</strong> Introduced sustainable practices and cleaner energy initiatives.</li>
+        <li><strong>20XX:</strong> Serving industries, transport fleets, and commercial businesses nationwide.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="logo.png" alt="GreenLine Petroleum" class="footer-logo">
+        <div class="footer-icons">
+          <a href="tel:+971505821442"><i class="fas fa-phone"></i></a>
+          <a href="mailto:ceo@greenlinepetroleumproducts.com"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/971505821442" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://linkedin.com/company/yourcompany" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://maps.app.goo.gl/3H9Q917gri859brk7" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> GreenLine Petroleum. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('open');
+    });
+    window.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
