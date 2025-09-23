@@ -384,15 +384,23 @@ footer {
   }
 
   .footer-container {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+    flex-direction: column;    /* stack logo and info vertically */
+    align-items: center;       /* center horizontally */
+    justify-content: center;
+    text-align: center;        /* center text */
   }
 
   .footer-left img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 0;
+    width: 150px;              /* bigger logo */
+    height: 150px;             /* keep square */
+    margin-bottom: 15px;       /* space below logo */
+    border-radius: 20px;       /* optional rounding */
+  }
+
+  .footer-right {
+    margin: 0;                 /* remove previous left margin */
+    align-items: center;       /* center contact info */
+    text-align: center;
   }
 
   .contact-info h3 {
@@ -402,19 +410,22 @@ footer {
   .contact-info p {
     font-size: 0.85rem;
   }
-  
+
+  .footer-icons {
+    justify-content: center;   /* center social icons */
+    margin-top: 10px;          /* optional spacing above icons */
+  }
 
   .footer-icons a {
-    width: 30px;
-    height: 30px;
+    width: 35px;               /* slightly bigger icons */
+    height: 35px;
   }
 
   .footer-icons a img {
-    width: 16px;
-    height: 16px;
+    width: 18px;               /* adjust icon images proportionally */
+    height: 18px;
   }
 }
-
 
 /* =====================
    Responsive Media Queries
