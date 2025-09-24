@@ -14,17 +14,79 @@
     body { background:#fff; color:#000; line-height:1.6; }
     a { text-decoration:none; color:#0f5132; }
     a:hover { color:#095018; }
+/* Navbar */
+header {
+  background:#fff;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed; /* float navbar */
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+.logo {
+  font-size:1.4em;
+  font-weight:bold;
+  color:#0f5132;
+}
+nav {
+  display:flex;
+  gap:20px;
+}
+nav a {
+  font-size:1em;
+  transition:0.3s;
+  color:#0f5132;
+  text-decoration:none;
+}
+nav a:hover { color:#095018; }
+.hamburger {
+  display:none;
+  font-size:1.5em;
+  cursor:pointer;
+  color:#0f5132;
+}
+.mobile-menu {
+  display:none;
+  flex-direction:column;
+  position:absolute;
+  top:60px;
+  left:0;
+  width:100%;
+  background:#fff;
+  padding:20px 0;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  transition:max-height 0.3s ease, opacity 0.3s ease;
+  overflow:hidden;
+  max-height:0;
+  opacity:0;
+}
+.mobile-menu.open {
+  display:flex;
+  max-height:500px;
+  opacity:1;
+}
+.mobile-menu a {
+  padding:10px 20px;
+  color:#0f5132;
+  text-decoration:none;
+  transition:0.3s;
+}
+.mobile-menu a:hover { background:#f1f1f1; }
 
-    /* Navbar */
-    header { background:#fff; padding:15px 40px; display:flex; justify-content:space-between; align-items:center; position:relative; z-index:1000; }
-    .logo { font-size:1.4em; font-weight:bold; color:#0f5132; }
-    nav { display:flex; gap:20px; }
-    nav a { font-size:1em; transition:0.3s; }
-    .hamburger { display:none; font-size:1.5em; cursor:pointer; color:#0f5132; }
-    .mobile-menu { display:none; flex-direction:column; position:absolute; top:60px; left:0; width:100%; background:#fff; padding:20px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-    .mobile-menu.open { display:flex; }
-    .mobile-menu a { padding:10px 20px; }
-    .mobile-menu a:hover { background:#f1f1f1; }
+/* Responsive */
+@media(max-width:768px){
+  nav { display:none; }
+  .hamburger { display:block; }
+}
+
+/* Push content below fixed navbar */
+body { padding-top:70px; }
+
 
     /* Hero */
     #contact-hero { background:url('images/petroleum-bg.jpg') center/cover no-repeat; padding:100px 20px; color:#0f5132; text-align:center; }

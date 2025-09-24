@@ -24,7 +24,6 @@ body {
   color: #333;
   line-height: 1.6;
 }
-
 /* Navbar */
 header {
   background: #ffffff;
@@ -32,8 +31,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed; /* make navbar float */
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* subtle shadow */
 }
 
 header .logo {
@@ -72,27 +75,51 @@ header nav a:hover {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 60px;
+  top: 60px; /* adjust based on header height */
   left: 0;
   width: 100%;
   background: #ffffff;
   padding: 20px 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
 }
 
 .mobile-menu.open {
   display: flex;
+  max-height: 500px;
+  opacity: 1;
 }
 
 .mobile-menu a {
   padding: 10px 20px;
   color: #0f5132;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 .mobile-menu a:hover {
   background: #f1f1f1;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  header nav {
+    display: none; /* hide desktop nav on mobile */
+  }
+
+  .hamburger {
+    display: block; /* show hamburger icon on mobile */
+  }
+}
+
+/* Push content below fixed navbar */
+body {
+  padding-top: 70px; /* same as header height */
+}
+
 
 /* Services Section */
 #services {
