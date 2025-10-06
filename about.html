@@ -321,6 +321,251 @@ a {
       font-size: 1.2em;
     }
 
+
+
+    /* ===================== Meet Our Team Section ===================== */
+#team {
+  padding: 70px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+#team h2 {
+  color: #0f5132;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.team-member {
+  flex: 1 1 220px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #0B6623;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.team-member h3 {
+  font-size: 1.2rem;
+  color: #0B6623;
+  margin-bottom: 0.3rem;
+}
+
+.team-member .position {
+  color: #444;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.team-member .quote {
+  font-style: italic;
+  color: #000;
+  font-size: 0.95rem;
+  max-width: 250px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-member img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .team-member h3 {
+    font-size: 1.1rem;
+  }
+
+  .team-member .quote {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-member {
+    margin-bottom: 2rem;
+  }
+}
+
+
+    /* ===================== Mission, Vision, Values & Quality ===================== */
+#mission-vision-values {
+  padding: 70px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+#mission-vision-values h2 {
+  color: #0f5132;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mv-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.mv-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  flex: 1 1 400px;
+  max-width: 500px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.mv-icon {
+  font-size: 2.2rem;
+  color: #0B6623;
+  margin-bottom: 1rem;
+}
+
+.mv-card h3 {
+  color: #0B6623;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.mv-card p {
+  color: #000;
+  line-height: 1.7;
+}
+
+/* Core Values */
+.values-heading {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+
+.value {
+  background: #fff;
+  flex: 1 1 220px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.value:hover {
+  transform: translateY(-5px);
+}
+
+.value i {
+  font-size: 2rem;
+  color: #0B6623;
+  margin-bottom: 0.8rem;
+}
+
+.value h3 {
+  color: #0B6623;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.value p {
+  color: #000;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Quality Standards */
+.quality-heading {
+  margin-bottom: 1.5rem;
+}
+
+.quality-box {
+  background: #fff;
+  border-left: 6px solid #0B6623;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.quality-icon {
+  font-size: 2rem;
+  color: #0B6623;
+  margin-bottom: 1rem;
+}
+
+.quality-box p {
+  margin-bottom: 1rem;
+  color: #000;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mv-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mv-card {
+    text-align: center;
+  }
+
+  .quality-box {
+    text-align: center;
+    border-left: none;
+    border-top: 5px solid #0B6623;
+  }
+}
+
+
 /* Footer */
 /* Footer */
 footer {
@@ -495,6 +740,43 @@ footer {
     </div>
   </section>
 
+  <!-- MEET OUR TEAM SECTION -->
+<section id="team">
+  <h2>Meet Our Team</h2>
+  <div class="team-container">
+
+    <div class="team-member">
+      <img src="sample ceo.png" alt="Team Member 1">
+      <h3>Sheikh Mohammed</h3>
+      <p class="position">Chief Executive Officer</p>
+      <p class="quote">"Leading with vision, driving with integrity."</p>
+    </div>
+
+    <div class="team-member">
+      <img src="sample ceo.png" alt="Team Member 2">
+      <h3>Ahmed Khan</h3>
+      <p class="position">Operations Manager</p>
+      <p class="quote">"Efficiency and safety are the heart of our operations."</p>
+    </div>
+
+    <div class="team-member">
+      <img src="sample ceo.png" alt="Team Member 3">
+      <h3>Fatima Al Zahra</h3>
+      <p class="position">Quality Control Head</p>
+      <p class="quote">"Quality is not an act, it’s a habit we live by."</p>
+    </div>
+
+    <div class="team-member">
+      <img src="sample ceo.png" alt="Team Member 4">
+      <h3>Omar Ali</h3>
+      <p class="position">Sales & Client Relations</p>
+      <p class="quote">"Our clients’ trust is the foundation of our growth."</p>
+    </div>
+
+  </div>
+</section>
+
+
   <!-- Company Intro -->
   <section>
     <h2>Who We Are</h2>
@@ -529,44 +811,80 @@ footer {
     </div>
   </section>
 
-  <!-- Mission & Vision -->
-  <section>
-    <h2>Our Mission & Vision</h2>
-    <div class="content text-box">
-      
-      <p><strong>Mission:</strong> To deliver efficient and sustainable petroleum products with a 
-      strong focus on safety, quality, and customer satisfaction. We aim to empower industries 
-      and communities by providing uninterrupted fuel solutions.</p>
-      <p><strong>Vision:</strong> To be the leading petroleum provider in the UAE, setting standards 
-      in energy excellence and environmental responsibility while contributing to the growth 
-      and prosperity of the nation.</p>
-    </div>
-  </section>
+<!-- MISSION, VISION, VALUES & QUALITY SECTION -->
+<section id="mission-vision-values">
+  <h2>Our Vision, Mission & Core Values</h2>
 
-  <!-- Values -->
-  <section>
-    <div class="content">
-      <h2>Our Core Values</h2>
-      <div class="values-grid">
-        <div class="value">
-          <h3>Safety First</h3>
-          <p>We ensure safe operations, from storage to delivery, prioritizing people and environment.</p>
-        </div>
-        <div class="value">
-          <h3>Integrity</h3>
-          <p>Honesty and transparency drive every part of our business practices.</p>
-        </div>
-        <div class="value">
-          <h3>Sustainability</h3>
-          <p>We embrace eco-friendly solutions to reduce environmental impact.</p>
-        </div>
-        <div class="value">
-          <h3>Customer Focus</h3>
-          <p>Our clients’ trust and satisfaction are at the heart of everything we do.</p>
-        </div>
-      </div>
+  <div class="mv-container">
+    <!-- Vision -->
+    <div class="mv-card">
+      <i class="fas fa-eye mv-icon"></i>
+      <h3>Our Vision</h3>
+      <p>
+        To become a leading company in petroleum refining and derivatives trading in the UAE and beyond.
+        We aim to achieve excellence through innovation, advanced technology, and sustainable practices,
+        while building strong and transparent partnerships locally and internationally.
+      </p>
     </div>
-  </section>
+
+    <!-- Mission -->
+    <div class="mv-card">
+      <i class="fas fa-bullseye mv-icon"></i>
+      <h3>Our Mission</h3>
+      <p>
+        To deliver unparalleled excellence in petroleum trading by meeting customer needs completely
+        and offering top-quality products at competitive prices. We are committed to safety, innovation,
+        environmental responsibility, and building long-term trust with our clients and partners.
+      </p>
+    </div>
+  </div>
+
+  <!-- Core Values -->
+  <h2 class="values-heading">Our Core Values</h2>
+  <div class="values-grid">
+    <div class="value">
+      <i class="fas fa-users"></i>
+      <h3>Teamwork</h3>
+      <p>We work together, sharing knowledge and goals to achieve mutual success.</p>
+    </div>
+    <div class="value">
+      <i class="fas fa-star"></i>
+      <h3>Excellence</h3>
+      <p>We consistently strive for innovation, efficiency, and superior performance.</p>
+    </div>
+    <div class="value">
+      <i class="fas fa-clock"></i>
+      <h3>Commitment</h3>
+      <p>We respect deadlines, deliver on promises, and ensure customer satisfaction.</p>
+    </div>
+    <div class="value">
+      <i class="fas fa-leaf"></i>
+      <h3>Sustainability</h3>
+      <p>We integrate eco-friendly solutions and uphold environmental responsibility.</p>
+    </div>
+    <div class="value">
+      <i class="fas fa-handshake"></i>
+      <h3>Integrity</h3>
+      <p>We operate with transparency, honesty, and accountability in every action.</p>
+    </div>
+  </div>
+
+  <!-- Quality Standards -->
+  <h2 class="quality-heading">Our Quality Standards</h2>
+  <div class="quality-box">
+    <i class="fas fa-certificate quality-icon"></i>
+    <p>
+      At GreenLine Petroleum, quality is our core principle. We follow strict international standards
+      to ensure that every product meets the highest benchmarks of performance and safety. Our quality control
+      system involves continuous monitoring, testing, and improvement to guarantee consistent excellence.
+    </p>
+    <p>
+      We are dedicated to implementing cutting-edge technologies and sustainable practices that enhance
+      efficiency, minimize risks, and uphold our promise of delivering only the best petroleum products.
+    </p>
+  </div>
+</section>
+
 
   <!-- History -->
   <section>
