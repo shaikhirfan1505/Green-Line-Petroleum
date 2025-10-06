@@ -1153,3 +1153,37 @@ form button.btn:hover {
     font-size: 1.6rem;
   }
 }
+  #whatsapp-button {
+    position: fixed;
+    bottom: 20px;  /* distance from bottom */
+    left: 20px;    /* distance from left */
+    width: 50px;
+    height: 50px;
+    z-index: 9999; /* very high so it stays on top */
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #25D366;
+    transition: transform 0.2s;
+    touch-action: manipulation; /* improves mobile touch */
+  }
+
+  #whatsapp-button img {
+    width: 70%;
+    height: 70%;
+  }
+
+  #whatsapp-button:hover {
+    transform: scale(1.1);
+  }
+
+  /* Optional: slightly bigger on mobile for easier tap */
+  @media (max-width: 768px) {
+    #whatsapp-button {
+      width: 60px;
+      height: 60px;
+    }
+  }
